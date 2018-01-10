@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header" style="float: left">
+      <a class="navbar-brand" href="#">ComicsWorld</a>
+      <a class="navbar-brand" routerLink="/home">Home</a>
+      <a class="navbar-brand" routerLink="/characters">Characters</a>
+      <a class="navbar-brand" routerLink="/comics">Comics</a>
+    </div>  
+    <div class="navbar-header"  style="float: right">
+      <a class="navbar-brand" routerLink="/login">Sign Up</a>
+      <a class="navbar-brand" *ngIf="!auth.isAuthenticated()" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span>  Log In</a>
+      <a class="navbar-brand" *ngIf="auth.isAuthenticated()" (click)="auth.logout()"><span class="glyphicon glyphicon-log-out"></span>  Log Out</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

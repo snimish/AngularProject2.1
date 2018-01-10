@@ -1,0 +1,12 @@
+
+<div *ngIf="isLoaded">
+  <table >
+    <tr *ngFor="let c of characters">
+      <td>{{c.name}}</td>
+      <td>{{c.description}}</td>     
+    </tr>
+  </table>
+</div>
+<div *ngIf="!isLoaded">
+  <p>Loading...</p>
+</div>
