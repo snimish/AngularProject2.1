@@ -7,13 +7,14 @@ import { MarvelDataService } from 'app/marvel-data/marvel-data.service';
   styleUrls: ['./comics.component.css']
 })
 export class ComicsComponent implements OnInit {
-
-  private characters: any;
+  private isLoaded: boolean = false;  
+  private comics: any;
   constructor(private marvelService: MarvelDataService) { }
 
   ngOnInit() {
-    this.marvelService.getCharacters().subscribe((res)=>{
-      this.characters = res;
+    this.marvelService.getComics().subscribe((res)=>{
+      this.comics = res.data.results;
+      this.isLoaded =true;
       //console.log(res.data.results);
     });
   }

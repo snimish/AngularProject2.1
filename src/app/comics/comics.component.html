@@ -1,3 +1,35 @@
-<p>
-  comics works!
-</p>
+
+<div id="detailPage" class="container" *ngIf="isLoaded"> 
+    <div *ngFor="let c of comics" class="detailPropertyGrid"  >
+        <div class="col-lg-6">   
+            <div class="propertydetailbox borderBottom">   
+            <table class="headingtable table">
+                    <thead>
+                        <tr >                        
+                            <th class="propertyHeader">
+                                  <i class="fa fa-building fa-2x" aria-hidden="true"></i> 
+                                  <span id="Ziptown">{{c.title}}</span>                                                            
+                            </th>
+                        </tr>
+                    </thead>
+            </table>                
+                <div  id="imgBox" class="col-md-5 col-sm-5 col-xs-12 nopadding">      
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div id="main-imageDiv">
+                                        <a><img [src]="c.thumbnail.path+'/standard_xlarge.jpg'" id="main-image" alt="" class="img-responsive"></a>                                       
+                                    </div>    
+                        </div>                    
+                                 
+                 </div>                          
+                        <div class="col-md-7 col-sm-7 col-xs-12" style="height:200px" >
+                            {{(c.description && c.description.length > 300)?c.description.substring(0,300)+'...':c.description}}
+                        </div>           
+            </div>
+        </div>        
+    </div> 
+</div>	
+<div *ngIf="!isLoaded">
+  <div class="loading">
+    <img src="assets/loading.svg" alt="loading">
+  </div>
+</div>

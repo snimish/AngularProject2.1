@@ -1,0 +1,20 @@
+.propertydetailbox{
+    margin-bottom: 3em;
+height: 250px;
+}
+
+.borderBottom{
+color: #005584;
+border-bottom: 1px solid #005584;
+}
+
+.detailPropertyGrid .container{
+margin-bottom:2em; 
+}
+.headingtable tr th{
+    background: #005584;
+    color:#fff;
+     font-weight: normal;
+    border-bottom:none;
+    vertical-align: middle;
+ }
