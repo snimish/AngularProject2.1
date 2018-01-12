@@ -17,6 +17,7 @@ import { ComicsComponent } from './comics/comics.component';
 import { CharactersComponent } from './characters/characters.component';
 import { ComicComponent } from './comic/comic.component';
 import { MarvelDataService } from 'app/marvel-data/marvel-data.service';
+import { CanActivateViaAuthGuard } from 'app/auth/login-auth.guard';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { MarvelDataService } from 'app/marvel-data/marvel-data.service';
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [AuthService, MarvelDataService],
+  providers: [AuthService, MarvelDataService, CanActivateViaAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

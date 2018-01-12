@@ -1,3 +1,8 @@
-<p>
-  comic works!
-</p>
+<div *ngIf="!isLoaded">
+    <div class="loading">
+      <img src="assets/loading.svg" alt="loading">
+    </div>
+  </div>
+  <div id="detailPage" class="container" *ngIf="isLoaded"> 
+    {{comic[0].title}}
+    </div>

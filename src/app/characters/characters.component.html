@@ -2,7 +2,7 @@
 <div id="detailPage" class="container" *ngIf="isLoaded"> 
     <div *ngFor="let c of characters" class="detailPropertyGrid"  >
         <div class="col-lg-6">   
-            <div class="propertydetailbox borderBottom">   
+            <div class="propertydetailbox borderBottom" [routerLink]="['/characters', c.id]">   
             <table class="headingtable table">
                     <thead>
                         <tr >                        
