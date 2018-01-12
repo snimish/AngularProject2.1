@@ -26,3 +26,9 @@ API - GET /v1/public/comics/{comicId}
 Screen 3 - In the information about the comic, create a button which will route to
 another page and it will show the creator of that comics.
 API - GET /v1/public/comics/{comicId}/creators
+
+# Implementation
+1. Created Account on Auth0
+2. Created Account on Marvel site
+
+Output folder contains screenshots of running application
