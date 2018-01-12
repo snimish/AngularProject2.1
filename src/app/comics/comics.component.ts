@@ -23,7 +23,7 @@ export class ComicsComponent implements OnInit {
         console.log(this.characterId);
       });
 
-    if (this.characterId == 0) {
+    if (this.characterId != 0) {
       this.marvelService.getComicsByCharacterId(this.characterId).subscribe((res) => {
         this.comics = res.data.results;
         this.isLoaded = true;

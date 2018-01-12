@@ -10,12 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CharacterComponent implements OnInit {
   private isLoaded: boolean = false;
   private character: any;
+  private id: number;
+
   constructor(private marvelService: MarvelDataService, private route: ActivatedRoute, private router: Router) { }
-  id: number;
-  private sub: any;
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
 
       this.marvelService.getCharacterById(this.id).subscribe((res) => {

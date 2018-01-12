@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MarvelDataService } from 'app/marvel-data/marvel-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-comic',
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ComicComponent implements OnInit {
   private isLoaded: boolean = false;
   private comic: any;
-  constructor(private marvelService: MarvelDataService, private route: ActivatedRoute) { }
+  constructor(private marvelService: MarvelDataService, private route: ActivatedRoute, private router: Router) { }
   id: number;
   private sub: any;
 
@@ -18,7 +18,7 @@ export class ComicComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
       console.log(this.id);
-      
+
       this.marvelService.getComicById(this.id).subscribe((res) => {
         this.comic = res.data.results;
         this.isLoaded = true;
@@ -27,4 +27,8 @@ export class ComicComponent implements OnInit {
 
     });
   }
+
+  loadCreators(id:number){
+    this.router.navigate(['/creators'], { queryParams: { cid: id } });
+  }  
 }

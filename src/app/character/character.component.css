@@ -1,0 +1,16 @@
+.detailbox{
+    margin-bottom: 3em;
+height: 250px;
+}
+
+
+.detailgrid .container{
+margin-bottom:2em; 
+}
+.headingtable tr th{
+    background: #005584;
+    color:#fff;
+     font-weight: normal;
+    border-bottom:none;
+    vertical-align: middle;
+ }

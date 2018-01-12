@@ -7,7 +7,9 @@ import { ComicsComponent } from './comics/comics.component';
 import { ComicComponent } from './comic/comic.component';
 import { CallbackComponent } from './callback/callback.component';
 import { CanActivateViaAuthGuard } from 'app/auth/login-auth.guard';
+import { CreatorsComponent } from 'app/creators/creators.component';
 
+// CanActivateViaAuthGuard is added to prevent access without login
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -16,5 +18,6 @@ export const ROUTES: Routes = [
   { path: 'characters/:id', component: CharacterComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'comics', component: ComicsComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'comics/:id', component: ComicComponent, canActivate: [CanActivateViaAuthGuard] },
+  { path: 'creators', component: CreatorsComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: '**', redirectTo: '' }
 ];

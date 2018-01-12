@@ -1,4 +1,4 @@
-.propertydetailbox{
+.detailbox{
     margin-bottom: 3em;
 height: 250px;
 }
@@ -8,7 +8,7 @@ color: #005584;
 border-bottom: 1px solid #005584;
 }
 
-.detailPropertyGrid .container{
+.detailgrid .container{
 margin-bottom:2em; 
 }
 .headingtable tr th{

@@ -1,8 +1,8 @@
 
 <div id="detailPage" class="container" *ngIf="isLoaded"> 
-    <div *ngFor="let c of comics" class="detailPropertyGrid"  >
+    <div *ngFor="let c of comics" class="detailgrid"  >
         <div class="col-lg-6">   
-            <div class="propertydetailbox borderBottom" [routerLink]="['/comics', c.id]">   
+            <div class="detailbox borderBottom" [routerLink]="['/comics', c.id]">   
             <table class="headingtable table">
                     <thead>
                         <tr >                        

@@ -1,14 +1,14 @@
 
 <div id="detailPage" class="container" *ngIf="isLoaded"> 
-    <div *ngFor="let c of characters" class="detailgrid"  >
+    <div *ngFor="let c of creators" class="detailgrid"  >
         <div class="col-lg-6">   
-            <div class="detailbox borderBottom" [routerLink]="['/characters', c.id]">   
+            <div class="detailbox borderBottom" >   
             <table class="headingtable table">
                     <thead>
                         <tr >                        
                             <th class="propertyHeader">
                                   <i class="fa fa-building fa-2x" aria-hidden="true"></i> 
-                                  <span id="Ziptown">{{c.name}}</span>                                                            
+                                  <span id="Ziptown">{{c.fullName}}</span>                                                            
                             </th>
                         </tr>
                     </thead>
@@ -22,7 +22,7 @@
                                  
                  </div>                          
                         <div class="col-md-7 col-sm-7 col-xs-12" >
-                            {{(c.description && c.description.length > 300)?c.description.substring(0,300)+'...':c.description}}
+                            
                         </div>           
             </div>
         </div>        

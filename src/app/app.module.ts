@@ -18,6 +18,7 @@ import { CharactersComponent } from './characters/characters.component';
 import { ComicComponent } from './comic/comic.component';
 import { MarvelDataService } from 'app/marvel-data/marvel-data.service';
 import { CanActivateViaAuthGuard } from 'app/auth/login-auth.guard';
+import { CreatorsComponent } from './creators/creators.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CanActivateViaAuthGuard } from 'app/auth/login-auth.guard';
     CharacterComponent,
     ComicsComponent,
     CharactersComponent,
-    ComicComponent
+    ComicComponent,
+    CreatorsComponent
   ],
   imports: [
     BrowserModule,
