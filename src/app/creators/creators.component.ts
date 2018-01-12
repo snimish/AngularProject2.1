@@ -18,21 +18,20 @@ export class CreatorsComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       // Defaults to 0 if no query param provided.
       this.comicId = +params['cid'] || 0;
-      console.log(this.comicId);
 
       // if comicId is present then use it to fetch creators
       if (this.comicId != 0) {
         this.marvelService.getCreatorsByComicId(this.comicId).subscribe((res) => {
           this.creators = res.data.results;
           this.isLoaded = true;
-          console.log(res);
+          //console.log(res);
         });
       }
       else {
         this.marvelService.getCreators().subscribe((res) => {
           this.creators = res.data.results;
           this.isLoaded = true;
-          console.log(res);
+          //console.log(res);
         });
       }
 

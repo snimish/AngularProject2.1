@@ -10,19 +10,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ComicComponent implements OnInit {
   private isLoaded: boolean = false;
   private comic: any;
+  private id: number;
+
   constructor(private marvelService: MarvelDataService, private route: ActivatedRoute, private router: Router) { }
-  id: number;
-  private sub: any;
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id']; // (+) converts string 'id' to a number
-      console.log(this.id);
+    this.route.params.subscribe(params => {
+      this.id = +params['id']; // (+) converts string 'id' to a number      
 
       this.marvelService.getComicById(this.id).subscribe((res) => {
         this.comic = res.data.results;
         this.isLoaded = true;
-        console.log(res);
+        //console.log(res);
       });
 
     });

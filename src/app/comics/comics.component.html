@@ -1,4 +1,8 @@
-
+<div *ngIf="!isLoaded">
+    <div class="loading" align="center">
+      <img src="assets/loading.svg" alt="loading">
+    </div>
+  </div>
 <div id="detailPage" class="container" *ngIf="isLoaded"> 
   <h1 align="center" style="margin-bottom:20px">Marvel Comics</h1>
     <div *ngFor="let c of comics" class="detailgrid"  >
@@ -29,8 +33,3 @@
         </div>        
     </div> 
 </div>	
-<div *ngIf="!isLoaded">
-  <div class="loading" align="center">
-    <img src="assets/loading.svg" alt="loading">
-  </div>
-</div>

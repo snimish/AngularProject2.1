@@ -15,7 +15,7 @@ export class CharactersComponent implements OnInit {
     this.marvelService.getCharacters().subscribe((res)=>{
       this.characters = res.data.results;
       this.isLoaded = true;
-      console.log(res);
+      //console.log(res);
     });    
   }
 

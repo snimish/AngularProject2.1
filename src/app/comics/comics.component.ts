@@ -11,32 +11,31 @@ export class ComicsComponent implements OnInit {
   private isLoaded: boolean = false;
   private characterId: number;
   private comics: any;
-  constructor(private marvelService: MarvelDataService, private route: ActivatedRoute) { }
+  constructor(private marvelService: MarvelDataService, private route: ActivatedRoute) {
+    this.isLoaded = false;
+  }
 
   ngOnInit() {
+    this.isLoaded = false;
 
-    this.route
-      .queryParams
-      .subscribe(params => {
+    this.route.queryParams.subscribe(params => {
         // Defaults to 0 if no query param provided.
         this.characterId = +params['cid'] || 0;
-        console.log(this.characterId);
-      });
 
-    if (this.characterId != 0) {
-      this.marvelService.getComicsByCharacterId(this.characterId).subscribe((res) => {
-        this.comics = res.data.results;
-        this.isLoaded = true;
+        if (this.characterId != 0) {
+          this.marvelService.getComicsByCharacterId(this.characterId).subscribe((res) => {
+            this.comics = res.data.results;
+            this.isLoaded = true;
+          });
+        }
+        else {
+          this.marvelService.getComics().subscribe((res) => {
+            this.comics = res.data.results;
+            this.isLoaded = true;
+          });
+          //console.log(res.data.results);
+        }
       });
-    }
-    else {
-      this.marvelService.getComics().subscribe((res) => {
-        this.comics = res.data.results;
-        this.isLoaded = true;
-      });
-
-      //console.log(res.data.results);
-    }
   }
 
 }
