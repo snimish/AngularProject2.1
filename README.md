@@ -2,7 +2,7 @@
 
 This sample demonstrates how to add authentication with a custom login form to an Angular application using Auth0.
 
-Characters
+# Characters
 Screen 1 - Once after successful login, call the API to get all the characters and show it
 in the LI list.
 API - GET /v1/public/characters
@@ -15,7 +15,7 @@ Screen 3 - In the information about the character, create a button which will ro
 another page and it will show the comics for that characters
 API - GET /v1/public/characters/{characterId}/comics
 
-Comics
+# Comics
 Screen 1 - Call the API to get all the comics and show it in the LI list.
 API - /v1/public/comics
 
