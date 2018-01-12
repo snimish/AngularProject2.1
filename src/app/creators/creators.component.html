@@ -1,5 +1,6 @@
 
 <div id="detailPage" class="container" *ngIf="isLoaded"> 
+  <h1 align="center" style="margin-bottom:20px" >Creators</h1>
     <div *ngFor="let c of creators" class="detailgrid"  >
         <div class="col-lg-6">   
             <div class="detailbox borderBottom" >   
@@ -29,7 +30,7 @@
     </div> 
 </div>	
 <div *ngIf="!isLoaded">
-  <div class="loading">
+  <div class="loading" align="center">
     <img src="assets/loading.svg" alt="loading">
   </div>
 </div>
