@@ -9,9 +9,10 @@
       <a class="navbar-brand" routerLink="/comics" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Comics</a>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <a class="navbar-brand" routerLink="/login">Sign Up</a>
-      <a class="navbar-brand" *ngIf="!auth.isAuthenticated()" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span>  Log In</a>
-      <a class="navbar-brand" *ngIf="auth.isAuthenticated()" (click)="auth.logout()"><span class="glyphicon glyphicon-log-out"></span>  Log Out</a>
+      <li><a class="navbar-brand" *ngIf="!auth.isAuthenticated()" routerLink="/login"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li class="disabled"><a class="navbar-brand" *ngIf="auth.isAuthenticated()" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a class="navbar-brand" *ngIf="!auth.isAuthenticated()" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span>  Log In</a></li>
+      <li><a class="navbar-brand" *ngIf="auth.isAuthenticated()" (click)="auth.logout()"><span class="glyphicon glyphicon-log-out"></span>  Log Out</a></li>
     </ul>
   </div>
 </nav>
