@@ -27,6 +27,7 @@ export class ComicComponent implements OnInit {
     });
   }
 
+  // Navigate to creators page with comicId as optional parameter
   loadCreators(id:number){
     this.router.navigate(['/creators'], { queryParams: { cid: id } });
   }  
