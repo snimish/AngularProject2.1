@@ -1,6 +1,6 @@
-# Comics App
+# ACADGILD Comics App
 
-This sample demonstrates how to add authentication with a custom login form to an Angular application using Auth0.
+This sample demonstrates how to add authentication with a custom login form to an Angular application using Auth0. It also includes basics of Routes, Http Services, Forms, Bindings and Directives. 
 
 # Characters
 Screen 1 - Once after successful login, call the API to get all the characters and show it
@@ -32,3 +32,9 @@ API - GET /v1/public/comics/{comicId}/creators
 2. Created Account on Marvel site
 
 Output folder contains screenshots of running application
+
+# Credits
+ACADGILD - for training and material
+
+# Author
+Nimish Shikerkar
